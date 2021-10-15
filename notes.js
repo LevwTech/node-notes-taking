@@ -47,4 +47,13 @@ function listNotes() {
     console.log(element);
   });
 }
-module.exports = { getNotes, addNotes, removeNote, listNotes };
+function readNote(title) {
+  const notes = loadNotes();
+  const note = notes.filter((note) => note.title === title);
+  if (note.length === 0) {
+    console.log(chalk.red.inverse("No notes with that title"));
+    return;
+  }
+  console.log(`${note[0].title} : ${chalk.green.inverse(note[0].body)}`);
+}
+module.exports = { getNotes, addNotes, removeNote, listNotes, readNote };
