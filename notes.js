@@ -41,4 +41,10 @@ function removeNote(title) {
   saveNotes(newNotes);
   console.log(chalk.green.inverse("removed note"));
 }
-module.exports = { getNotes, addNotes, removeNote };
+function listNotes() {
+  const notes = loadNotes();
+  notes.forEach((element) => {
+    console.log(element);
+  });
+}
+module.exports = { getNotes, addNotes, removeNote, listNotes };
