@@ -1,2 +1,3 @@
 # node-notes-taking
-note taking app using node
+
+terminal note taking app using node, chalk.
